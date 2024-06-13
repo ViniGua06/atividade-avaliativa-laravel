@@ -38,17 +38,31 @@
             list-style: none;
         }
 
+        main {
+            margin: 2rem;
+        }
+
+        a {
+            color: whitesmoke;
+            text-decoration: none;
+        }
+
         @yield('styles')
 
     </style>
 </head>
 <body>
     <header>
-        <h1>TITULO</h1>
+        <h1><a href="{{route("home")}}">AVÕES</a></h1>
         <ul>
-            <li>Home</li>
-            <li>Produtos</li>
+            <li><a href="{{route("home")}}">Home</a></li>
+            <li><a href="{{route("planes")}}">Produtos</a></li>
+            <li><a href="{{route("formplanes")}}">Criar Produtos</a></li>
         </ul>
     </header>
+
+    <main>
+        @yield('content')
+    </main>
 </body>
 </html>
