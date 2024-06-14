@@ -42,4 +42,24 @@ class AirplaneController extends Controller
 
         return redirect()->route("planes");
     }
+
+    public function goToUpdateForm ($id) {
+        $airplane = Airplane::find($id);
+
+        return view("updatePlaneForm")->with("plane", $airplane);
+    }
+
+    public function update (Request $request, Airplane $plane) {
+        $plane->name = $request->input("name");
+        $plane->data_criacao = $request->input("data");
+        $plane->unidades_produzidas = $request->input("unidades");
+        $plane->nacao = $request->input("nacao");
+        $plane->tipo = $request->input("tipo");
+        $plane->velocidade_maxima = $request->input("velocidade");
+        $plane->produzida = $request->input("produzido");
+
+        $plane->save();
+
+        return redirect()->route('planes');
+    }
 }

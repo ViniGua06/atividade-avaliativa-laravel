@@ -61,7 +61,7 @@
         </select>
 
         <label>Velocidade Máxima</label>
-        <input type="number" step="0.01" name="preco" required>
+        <input type="number" step="0.01" name="velocidade" required>
 
         <label>Ainda produzido?</label>
         <select name="produzido" id="" required>

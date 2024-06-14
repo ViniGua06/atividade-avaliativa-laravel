@@ -42,25 +42,32 @@
         </thead>
         <tbody>
             @foreach($planes as $plane) 
-                <tr>
-                    <td>{{$plane->name}}</td>
-                    <td>{{$plane->data_criacao}}</td>
-                    <td>{{$plane->unidades_produzidas}}</td>
-                    <td>{{$plane->nacao}}</td>
-                    <td>{{$plane->tipo}}</td>
-                    <td>{{ $plane->velocidade_maxima }}km/h</td>
-                    <td>{{$plane->produzida}}</td>
-                    <td>
-                        <form action="{{ route('remove', $plane) }}" method="POST">
-                            @csrf
-                            @method('DELETE')
+           
+                <tr>                             
+                        <td>{{$plane->name}}</td>
+                        <td>{{$plane->data_criacao}}</td>
+                        <td>{{$plane->unidades_produzidas}}</td>
+                        <td>{{$plane->nacao}}</td>
+                        <td>{{$plane->tipo}}</td>
+                        <td>{{ $plane->velocidade_maxima }}km/h</td>
+                        <td>{{$plane->produzida}}</td>
+                        <td>
+                            <form action="{{ route('remove', $plane) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
 
-                            <button type="submit">Remover</button>
-                        </form>
-                    </td>
+                                <button type="submit">Remover</button>
+                            </form>
+                        </td>
+                        <td> <a href="{{ route('formupdate', $plane->id) }}"><button>Editar</button></a></td>
+                        
+                   
                 </tr>
+         
             @endforeach
         </tbody>
     </table>
+
+    
 
 @endsection

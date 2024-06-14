@@ -53,7 +53,7 @@
 </head>
 <body>
     <header>
-        <h1><a href="{{route("home")}}">AVÕES</a></h1>
+        <h1><a href="{{route("home")}}">AVIÕES</a></h1>
         <ul>
             <li><a href="{{route("home")}}">Home</a></li>
             <li><a href="{{route("planes")}}">Produtos</a></li>
