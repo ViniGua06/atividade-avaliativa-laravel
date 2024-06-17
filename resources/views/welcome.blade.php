@@ -10,5 +10,8 @@
 @endsection
 
 @section("content")
-    <h1>HOME</h1>
+    <h1>BEM VINDO(A) A PÁGINA INICIAL</h1>
+    <ul><li>Clique em "Criar Produtos" para criar os produtos</li>
+        <li>Clique em "Produtos" para exibir os produtos criados</li>
+    </ul>
 @endsection
