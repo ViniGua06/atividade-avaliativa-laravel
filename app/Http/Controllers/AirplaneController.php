@@ -11,10 +11,30 @@ class AirplaneController extends Controller
         return view("welcome");
     }
 
-    public function get () {
+    public function get ($page) {
         $airplanes = Airplane::get();
 
-        return view('planes')->with("planes", $airplanes);
+        $skip = 0;
+        
+        if ($page == 1) {
+            $skip = 0;
+        } else {
+            $skip = ($page - 1) * 9 ;
+        }
+
+        $number_of_links = 0;
+
+        if ($airplanes->isEmpty()) {
+            $number_of_links = 1;
+        } else {
+            $number_of_links = ceil(count($airplanes) / 9);
+        }
+
+        return view('planes')
+        ->with("planes", $airplanes->skip($skip)->take(9))
+        ->with('quantity', count($airplanes))
+        ->with('links', $number_of_links)
+        ->with("page", $page);
     }
 
     public function form () {
@@ -34,13 +54,13 @@ class AirplaneController extends Controller
 
         $plane->save();
 
-        return redirect()->route("planes");
+        return redirect()->route("page", 1);
     }
 
     public function destroy (Airplane $plane) {
         $plane->delete();
 
-        return redirect()->route("planes");
+        return redirect()->route("page", 1);
     }
 
     public function goToUpdateForm ($id) {
@@ -60,6 +80,6 @@ class AirplaneController extends Controller
 
         $plane->save();
 
-        return redirect()->route('planes');
+        return redirect()->route('page', 1);
     }
 }

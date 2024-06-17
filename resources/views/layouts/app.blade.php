@@ -56,7 +56,7 @@
         <h1><a href="{{route("home")}}">AVIÕES</a></h1>
         <ul>
             <li><a href="{{route("home")}}">Home</a></li>
-            <li><a href="{{route("planes")}}">Produtos</a></li>
+            <li><a href="{{route("page", 1)}}">Produtos</a></li>
             <li><a href="{{route("formplanes")}}">Criar Produtos</a></li>
         </ul>
     </header>
