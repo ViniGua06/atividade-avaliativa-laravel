@@ -10,3 +10,6 @@ Route::post('/planes', [AirplaneController::class, "create"])->name("createPlane
 Route::delete('/planes/{plane}', [AirplaneController::class, "destroy"])->name("remove");
 Route::get('/{id}/edit', [AirplaneController::class, "goToUpdateForm"])->name("formupdate");
 Route::put('/planes/{plane}', [AirplaneController::class, "update"])->name("updatePlane");
+Route::fallback(function () {
+    return view("error404");
+});
