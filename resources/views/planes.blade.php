@@ -6,8 +6,9 @@
 
     table {
         border-collapse: collapse;
-        width: 100%;
-        color: rgba(116, 63, 145, 0.83)
+        min-width: 100%;
+        color: rgba(116, 63, 145, 0.83);
+        overflow-x: auto;
     }
 
     tr, td, th {
@@ -34,6 +35,7 @@
         justify-content: center;
         margin-top: 2rem;
         gap: 1rem;
+        width: 100%
     }
 
     .pag-container a {
@@ -65,6 +67,13 @@
         color: rgba(116, 63, 145, 0.83)
     }
 
+    @media(max-width: 450px) {
+        main {
+            margin: .6rem;
+        }
+    }
+
+
     
 
 @endsection
@@ -77,6 +86,8 @@
         <h1>Nenhum Item encontrado</h1>
         <a class="back" href="{{route("page", $links)}}">Voltar</a>
     </div>
+
+    
         
     @else
         <table>

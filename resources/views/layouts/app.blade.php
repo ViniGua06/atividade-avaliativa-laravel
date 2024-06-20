@@ -16,7 +16,7 @@
         }
 
         header {
-            width: 100%;
+            min-width: 100vw;
             height: 70px;
             display: flex;
             background: rgba(116, 63, 145, 0.83);
@@ -46,6 +46,23 @@
             color: whitesmoke;
             text-decoration: none;
         }
+
+        @media(max-width: 450px){
+            header {
+            gap: 1rem;
+            color: green;
+            font-size: .7rem;
+        }
+
+        header > ul {
+            justify-content: center;
+            width: 100%;
+        }
+
+        
+        }
+        
+
 
         @yield('styles')
 

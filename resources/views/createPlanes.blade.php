@@ -29,6 +29,17 @@
         padding-block: 2rem
     }
 
+    @media(max-width: 450px) {
+        .container {
+            padding-inline: 1rem;
+            width: 100%;
+        }
+
+        main {
+            margin: 0;
+        }
+    }
+
 @endsection
 
 @section("content")
