@@ -18,8 +18,20 @@
     }
 
     tBody > tr:hover {
-        background-color: rgba(0,0,0, 0.2   )
+        background: rgba(116, 63, 145, 0.83);
+        color: white;
     }
+
+    tBody > tr:hover #remove-button {
+        background: rgba(116, 63, 145, 1);
+        color: white;
+    }
+
+    tBody > tr:hover #edit-button{
+        background: rgba(116, 63, 145, 1);
+        color: white;
+    }
+
 
     table button {
         width: 100%;
@@ -73,6 +85,15 @@
         }
     }
 
+    #remove-button {
+        color: rgba(116, 63, 145, 0.83);
+    }
+
+    #edit-button {
+        color: rgba(116, 63, 145, 0.83);
+    }
+    
+
 
     
 
@@ -118,10 +139,10 @@
                                     @csrf
                                     @method('DELETE')
 
-                                    <button type="submit">Remover</button>
+                                    <button type="submit" id="remove-button">Remover</button>
                                 </form>
                             </td>
-                            <td> <a href="{{ route('formupdate', $plane->id) }}"><button>Editar</button></a></td>
+                            <td> <a href="{{ route('formupdate', $plane->id) }}"><button id="edit-button">Editar</button></a></td>
                     </tr>
             
                 @endforeach
