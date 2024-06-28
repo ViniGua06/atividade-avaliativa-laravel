@@ -92,6 +92,13 @@
     #edit-button {
         color: rgba(116, 63, 145, 0.83);
     }
+
+    @media(max-width: 768px){
+        table {
+            min-width: 100%;           
+        }
+
+    }
     
 
 

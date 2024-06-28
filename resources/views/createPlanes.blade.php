@@ -40,6 +40,30 @@
         }
     }
 
+    @media (min-width: 451px) and (max-width: 768px) {
+        .container {
+            padding-inline: 1rem;
+            width: 80%;
+            margin-top: 5vh;
+        }
+
+        main {
+            margin: 0;
+        }
+    }
+
+    @media (min-width: 769px) and (max-width: 1250px) {
+        .container {
+            padding-inline: 1rem;
+            width: 50%;
+            margin-top: 5vh;
+        }
+
+        main {
+            margin: 0;
+        }
+    }
+
 @endsection
 
 @section("content")
